@@ -2,25 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Appointment;
+use App\Models\Schedule;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function __invoke()
     {
-        $events = [];
- 
-        $appointments = Appointment::with(['patient', 'doctor'])->get();
- 
-        foreach ($appointments as $appointment) {
-            $events[] = [
-                'title' => $appointment->patient->name . ' ('.$appointment->doctor->name.')',
-                'start' => $appointment->start_time,
-                'end' => $appointment->finish_time,
-            ];
-        }
- 
-        return view('home', compact('events'));
+        // Fetch all appointments
+        $appointments = Schedule::all();
+
+        // Pass the appointments to the view
+        return view('home', compact('appointments'));
     }
+    
 }

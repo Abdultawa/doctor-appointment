@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Appointment') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('appointment.status')" :active="request()->routeIs('appointment.status')">
+                        {{ __('Status') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -37,6 +40,11 @@
                     </x-slot>
 
                     <x-slot name="content">
+                    @admin
+                            <x-dropdown-link :href="route('admin.create')">
+                            {{ __('Schedule') }}
+                        </x-dropdown-link>
+                        @endadmin
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
@@ -86,6 +94,11 @@
             </div>
 
             <div class="mt-3 space-y-1">
+            @admin
+              <x-dropdown-link :href="route('admin.create')">
+                 {{ __('Schedule') }}
+              </x-dropdown-link>
+                        @endadmin
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Profile') }}
                 </x-responsive-nav-link>
