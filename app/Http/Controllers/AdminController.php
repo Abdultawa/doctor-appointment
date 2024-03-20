@@ -28,7 +28,7 @@ class AdminController extends Controller
             'end_time' => request('end_time')
         ]);
 
-        return back();
+        return back()->with('success', 'Appointment schedule successfully!');
     }
   
     

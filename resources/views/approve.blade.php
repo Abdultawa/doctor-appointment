@@ -9,6 +9,7 @@
             <table class="w-full border-collapse border border-gray-300">
                 <thead>
                 <tr>
+                    <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-600 uppercase tracking-wider">Name</th>
                     <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-600 uppercase tracking-wider">Date</th>
                     <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-600 uppercase tracking-wider">Start Time</th>
                     <th class="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-600 uppercase tracking-wider">End Time</th>
@@ -19,6 +20,7 @@
                 <tbody>
                 @foreach($bookedAppointments as $appointment)
                     <tr>
+                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ $appointment->user->name }}</td>
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ $appointment->date }}</td>
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ $appointment->start_time }}</td>
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ $appointment->end_time }}</td>

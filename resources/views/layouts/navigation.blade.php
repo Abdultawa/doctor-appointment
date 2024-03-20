@@ -15,12 +15,24 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @admin
+                    <x-nav-link :href="route('admin.create')" :active="request()->routeIs('admin.create')">
+                        {{ __('Schedule') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('appointment.approve_page')" :active="request()->routeIs('appointment.approve_page')">
+                        {{ __('Approve Appointment') }}
+                    </x-nav-link>
+                    @endadmin
+                    @unless(auth()->user()->can('admin'))
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Appointment') }}
                     </x-nav-link>
+                    @endunless
+                    @unless(auth()->user()->can('admin'))
                     <x-nav-link :href="route('appointment.status')" :active="request()->routeIs('appointment.status')">
                         {{ __('Status') }}
                     </x-nav-link>
+                    @endunless
                 </div>
             </div>
 
@@ -40,11 +52,6 @@
                     </x-slot>
 
                     <x-slot name="content">
-                    @admin
-                            <x-dropdown-link :href="route('admin.create')">
-                            {{ __('Schedule') }}
-                        </x-dropdown-link>
-                        @endadmin
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
@@ -81,9 +88,25 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            @unless(auth()->user()->can('admin'))
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
                 {{ __('Appointment') }}
             </x-responsive-nav-link>
+            @endunless
+            @unless(auth()->user()->can('admin'))
+            <x-responsive-nav-link :href="route('appointment.status')" :active="request()->routeIs('appointment.status')">
+                {{ __('Status') }}
+            </x-responsive-nav-link>
+            @endunless
+            @admin
+            <x-responsive-nav-link :href="route('admin.create')" :active="request()->routeIs('admin.create')">
+                {{ __('Schedule') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('appointment.approve_page')" :active="request()->routeIs('appointment.approve_page')">
+                {{ __('Approve Appointment') }}
+            </x-responsive-nav-link>
+            @endadmin
+
         </div>
 
         <!-- Responsive Settings Options -->
@@ -94,11 +117,6 @@
             </div>
 
             <div class="mt-3 space-y-1">
-            @admin
-              <x-dropdown-link :href="route('admin.create')">
-                 {{ __('Schedule') }}
-              </x-dropdown-link>
-                        @endadmin
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Profile') }}
                 </x-responsive-nav-link>

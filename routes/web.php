@@ -37,14 +37,14 @@ require __DIR__.'/auth.php';
 //     Route::resource('admin/posts', AdminPostController::class)->except('show');
 // });
 
-Route::get('/admin', [AdminController::class, 'create'])->name('admin.create');
+Route::get('/admin', [AdminController::class, 'create'])->name('admin.create')->middleware('can:admin');
 Route::post('/store', [AdminController::class, 'store'])->name('admin.store');
-Route::get('/appointments', [AppointmentController::class, 'appointments'])->name('appointment');
+Route::get('/appointments', [AppointmentController::class, 'appointments'])->name('appointment')->middleware(['auth', 'verified']);
 
-Route::get('/appointment-details/{id}', [AppointmentController::class, 'show'])->name('appointment.details');
-Route::get('/appointment-status', [AppointmentStatusController::class, 'status'])->name('appointment.status');
-Route::get('/appointments/approve', [AppointmentController::class, 'showApprovePage'])->name('appointment.approve_page');
-Route::post('/appointments/{id}/book', [AppointmentController::class, 'book'])->name('appointment.book');
-Route::post('/appointments/{id}/approve', [AppointmentController::class, 'approve_appointment'])->name('appointment.approve');
+Route::get('/appointment-details/{id}', [AppointmentController::class, 'show'])->name('appointment.details')->middleware(['auth', 'verified']);
+Route::get('/appointment-status', [AppointmentStatusController::class, 'status'])->name('appointment.status')->middleware(['auth', 'verified']);
+Route::get('/appointments/approve', [AppointmentController::class, 'showApprovePage'])->name('appointment.approve_page')->middleware('can:admin');
+Route::post('/appointments/{id}/book', [AppointmentController::class, 'book'])->name('appointment.book')->middleware(['auth', 'verified']);
+Route::post('/appointments/{id}/approve', [AppointmentController::class, 'approve_appointment'])->name('appointment.approve')->middleware('can:admin');
 
 
