@@ -22,6 +22,9 @@
                     <x-nav-link :href="route('appointment.approve_page')" :active="request()->routeIs('appointment.approve_page')">
                         {{ __('Approve Appointment') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.contact')" :active="request()->routeIs('admin.contact')">
+                        {{ __('Contact') }}
+                    </x-nav-link>
                     @endadmin
                     @unless(auth()->user()->can('admin'))
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">

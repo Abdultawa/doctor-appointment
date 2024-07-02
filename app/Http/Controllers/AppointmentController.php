@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Schedule;
+use App\Notifications\DoctorReminder;
 use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
@@ -44,8 +45,12 @@ public function approve_appointment($id){
     $appointment->status = 'approved';
     $appointment->save();
 
+
     // Fetch all booked appointments
     $bookedAppointments = Schedule::where('status', 'booked')->get();
+
+    $appointment->user->notify(new DoctorReminder($appointment));
+
 
     return view('approve', compact('bookedAppointments'))->with('success', 'Appointment approved successfully');
 }

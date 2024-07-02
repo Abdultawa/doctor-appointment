@@ -44,7 +44,8 @@
               </div>
             </div>
             <div class="col-xl-5 col-lg-7">
-              <form class="rd-form rd-mailform appointment-form" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php" novalidate="novalidate">
+              <form class="" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{route('contact')}}">
+              @csrf
                 <div class="row row-20">
                   <div class="col-12 wow fadeInRight" data-wow-dalay=".2s" style="visibility: hidden; animation-name: none;">
                     <div class="form-wrap">
@@ -64,7 +65,7 @@
                       <textarea class="form-input form-control-has-validation form-control-last-child" id="contact-message" name="message"></textarea><span class="form-validation"></span>
                     </div>
                   </div>
-                  <div class="col-12 wow fadeInRight" data-wow-dalay=".5s" style="visibility: hidden; animation-name: none;">
+                  <div class="col-12">
                     <button class="bg-blue-500 text-white hover:bg-blue-700 font-bold button-sm" type="submit">Make an Appointment</button>
                   </div>
                 </div>
@@ -73,3 +74,20 @@
           </div>
         </div>
       </section>
+      @if (session()->has('error'))
+                        <div x-data="{ show: true }"
+                            x-init="setTimeout(() => show = false, 4000)"
+                            x-show="show"
+                            class="fixed bg-red-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm"
+                        >
+                            <p>{{ session('error') }}</p>
+                        </div>
+                    @elseif (session()->has('success'))
+                        <div x-data="{ show: true }"
+                            x-init="setTimeout(() => show = false, 4000)"
+                            x-show="show"
+                            class="fixed bg-blue-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm"
+                        >
+                            <p>{{ session('success') }}</p>
+                        </div>
+                    @endif

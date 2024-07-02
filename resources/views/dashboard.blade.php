@@ -5,19 +5,15 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="pb-80" style="background-image: url('/ssss.jpegco'); background-size: cover; background-position: center;">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <!-- Welcome Message -->
-                    <div class="text-2xl font-bold mb-4">
-                        Welcome, {{ Auth::user()->name }}!
-                    </div>
-                    <p class="text-gray-600">
-                        We're glad to see you back. Here's what's new on your dashboard.
-                    </p>
-                </div>
+            <!-- Welcome Message -->
+            <div class="text-5xl font-bold mb-4 pt-20">
+                Welcome, {{ Auth::user()->name }}!
             </div>
+            <p class="text-2xl">
+                We're glad to see you back. Here's what's new on your dashboard.
+            </p>
         </div>
     </div>
 </x-app-layout>

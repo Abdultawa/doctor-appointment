@@ -4,8 +4,67 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e1cbca5ce204b3b5f902c942ccbb14b",
+    "content-hash": "4ce920b8bf4781f77ce153e008445254",
     "packages": [
+        {
+            "name": "abraham-flutterwave/laravel-payment",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bajoski34/Laravel.git",
+                "reference": "37939fffb8e73416ddd07584f73edd855a50dc71"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bajoski34/Laravel/zipball/37939fffb8e73416ddd07584f73edd855a50dc71",
+                "reference": "37939fffb8e73416ddd07584f73edd855a50dc71",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/support": "^7.0|^v8.83|^9.39|^10.0|^11.0",
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.2",
+                "nunomaduro/phpinsights": "^2.6",
+                "orchestra/testbench": "^7.11",
+                "pestphp/pest": "^1.22"
+            },
+            "type": "laravel-library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Flutterwave\\Payments\\Providers\\FlutterwaveServiceProvider"
+                    ],
+                    "aliases": {
+                        "Flutterwave": "Flutterwave\\Payments\\Facades\\Flutterwave"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Flutterwave\\Payments\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Flutterwave Developers",
+                    "email": "developers@flutterwavego.com",
+                    "homepage": "https://flutterwave.com/ng/"
+                }
+            ],
+            "description": "The Official Flutterwave Package for Laravel.",
+            "support": {
+                "issues": "https://github.com/bajoski34/Laravel/issues",
+                "source": "https://github.com/bajoski34/Laravel/tree/1.0.3"
+            },
+            "time": "2024-03-20T02:12:58+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.11.0",
