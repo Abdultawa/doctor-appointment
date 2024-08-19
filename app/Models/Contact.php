@@ -14,6 +14,9 @@ class Contact extends Model
     [
         'name',
         'phone',
-        'message'
+        'message',
+        'status'
     ];
+
+
 }

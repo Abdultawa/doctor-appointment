@@ -50,5 +50,6 @@ Route::get('/appointment-status', [AppointmentStatusController::class, 'status']
 Route::get('/appointments/approve', [AppointmentController::class, 'showApprovePage'])->name('appointment.approve_page')->middleware('can:admin');
 Route::post('/appointments/{id}/book', [AppointmentController::class, 'book'])->name('appointment.book')->middleware(['auth', 'verified']);
 Route::post('/appointments/{id}/approve', [AppointmentController::class, 'approve_appointment'])->name('appointment.approve')->middleware('can:admin');
+Route::post('/respond-to-contact', [ContactController::class, 'respond'])->name('respond-to-contact');
 
 

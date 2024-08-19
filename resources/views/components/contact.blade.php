@@ -7,36 +7,36 @@
               <div class="row row-xl-40 row-narrow-80">
                 <div class="col-sm-6 wow fadeInUp" style="visibility: hidden; animation-name: none;">
                   <ul class="contacts-list">
-                    <li class="title">Los Angeles, CA</li>
-                    <li>2566 Jim Rosa Lane, Suite 139</li>
-                    <li>Los Angeles 94108</li>
-                    <li><span>Email:</span><a href="mailto:#">info@demolink.org</a></li>
+                    <li class="title">Tudun Wada, Kaduna</li>
+                    <li>Kaduna Polytechnic Main Campus</li>
+                    <li>Kaduna, 800001</li>
+                    <li><span>Email:</span><a href="mailto:#">smkc@gmailcom</a></li>
                     <li><span>Phone:</span><a href="tel:#">+88 (0) 101 0000 000</a></li>
                   </ul>
                 </div>
                 <div class="col-sm-6 wow fadeInUp" data-wow-dalay=".2s" style="visibility: hidden; animation-name: none;">
                   <ul class="contacts-list">
-                    <li class="title">San Francisco, CA</li>
-                    <li>1314 Fairmont Avenue, Suite 54</li>
-                    <li>San Francisco 64723</li>
+                    <li class="title">Sabo, Kaduna State</li>
+                    <li>Kaduna Polytechnic CASS campus, Suite 54</li>
+                    <li>Sabon Tasha, Kaduna</li>
                     <li><span>Email:</span><a href="mailto:#">info@demolink.org</a></li>
                     <li><span>Phone:</span><a href="tel:#">+88 (0) 101 0000 000</a></li>
                   </ul>
                 </div>
                 <div class="col-sm-6 wow fadeInUp" data-wow-dalay=".3s" style="visibility: hidden; animation-name: none;">
                   <ul class="contacts-list">
-                    <li class="title">New York, NY</li>
-                    <li>198 West 21th Street, Suite 721</li>
-                    <li>New York NY 10010</li>
+                    <li class="title">Ungwan Rimi, Kaduna, KD</li>
+                    <li>Ungwan Rimi, CBMS Campus</li>
+                    <li>Kaduna State, KD, 800001</li>
                     <li><span>Email:</span><a href="mailto:#">info@demolink.org</a></li>
                     <li><span>Phone:</span><a href="tel:#">+88 (0) 101 0000 000</a></li>
                   </ul>
                 </div>
                 <div class="col-sm-6 wow fadeInUp" data-wow-dalay=".4s" style="visibility: hidden; animation-name: none;">
                   <ul class="contacts-list">
-                    <li class="title">Washington, DC</li>
-                    <li>Green Hill Road, Suite 195</li>
-                    <li>Washington 72847</li>
+                    <li class="title">Barnawa Kaduna, KD</li>
+                    <li>Barnawa, CES Campus, Kaduna State</li>
+                    <li>Kaduna State</li>
                     <li><span>Email:</span><a href="mailto:#">info@demolink.org</a></li>
                     <li><span>Phone:</span><a href="tel:#">+88 (0) 101 0000 000</a></li>
                   </ul>
@@ -44,8 +44,8 @@
               </div>
             </div>
             <div class="col-xl-5 col-lg-7">
-              <form class="" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{route('contact')}}">
-              @csrf
+                <form class="" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{route('contact')}}">
+                    @csrf
                 <div class="row row-20">
                   <div class="col-12 wow fadeInRight" data-wow-dalay=".2s" style="visibility: hidden; animation-name: none;">
                     <div class="form-wrap">
